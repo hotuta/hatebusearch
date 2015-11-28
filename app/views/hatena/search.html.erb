@@ -17,9 +17,13 @@
   <br />
   <%= @alert %>
 <% if @users.length > 1 %>
-  <div><span class='label'>タイトル：</span><span class='content'><%= @title %></span></div>
-  <div><span class='label'>URL：</span><span class='content'><%= link_to(@entry_url, @entry_url) %></span></div>
-  <div><span class='label'>ブックマークした人：</span><span class='content'><%= @users.length %>人</span></div>
+  <h3><span class='label'>タイトル：</span><span class='content'><%= @title %></span></h3>
+  <h3><span class='label'>本家人気コメントURL：</span><span class='content'><%= link_to(@entry_url, @entry_url) %></span>←見やすい!</h3>
+  <h3><span class='label'>このページをブックマークした人(公開アカウント数)：</span><span class='content'><%= @users.length %>人</span></h3>
+<h3><span class='label'>はてなスター数：</span>
+<img src="<%= asset_path "http://s.st-hatena.com/entry.count.image?uri="+@url %>" />
+個</h3>
+  
   <table width="80%">
     <tr>
       <th>No.</th>
@@ -31,7 +35,7 @@
   <% @users.each_with_index do |user, i| -%>
     <tr>
       <td width="2%"><%= i+1 %></td>
-      <td width="7%"><%= user %></td>
+      <td width="7%"><%= link_to @users[i], 'http://b.hatena.ne.jp/'+@users[i]+'/bookmark' %></td>
       <td width="20%"><%= @tags[i] %></td>
       <td width="25%"><%= @comments[i] %></td>
       <td width="3%"><%= @timestamps[i] %></td>
