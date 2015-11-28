@@ -17,9 +17,9 @@
   <%= @alert %>
 <% if @users.length > 1 %>
   <div><span class='label'>タイトル：</span><span class='content'><%= @title %></span></div>
-  <div><span class='label'>entry_url：</span><span class='content'><%= link_to(@entry_url, @entry_url) %></span></div>
+  <div><span class='label'>URL：</span><span class='content'><%= link_to(@entry_url, @entry_url) %></span></div>
   <div><span class='label'>ブックマークした人：</span><span class='content'><%= @users.length %>人</span></div>
-  <table>
+  <table width="80%">
     <tr>
       <th>No.</th>
       <th>ユーザー</th>
@@ -29,11 +29,11 @@
     </tr>
   <% @users.each_with_index do |user, i| -%>
     <tr>
-      <td><%= i+1 %></td>
-      <td><%= user %></td>
-      <td><%= @tags[i] %></td>
-      <td><%= @comments[i] %></td>
-      <td><%= @timestamps[i] %></td>
+      <td width="2%"><%= i+1 %></td>
+      <td width="7%"><%= user %></td>
+      <td width="20%"><%= @tags[i] %></td>
+      <td width="25%"><%= @comments[i] %></td>
+      <td width="3%"><%= @timestamps[i] %></td>
     </tr>
   <% end %>
   </table>
