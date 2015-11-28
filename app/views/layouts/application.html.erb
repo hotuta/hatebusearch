@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>はてなブックマークサーチ</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <!-- ヘッダー -->
+<header class="navbar">
+  <div class="container">
+    <div id="logo">はてなブックマークサーチ</div>
+    <ul class="header-right">
+
+    </ul>
+  </div>
+</header>
+  
+<div class="container">
+  <%= yield %>
+</div>
+  
+  <!-- フッター -->
+<div class="container">
+  <footer class="footer">
+    <div class="small">
+      &copy; ほつた　2015-
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
